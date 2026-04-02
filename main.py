@@ -33,7 +33,7 @@ scheduler.start()
 @app.get("/")
 async def home(request: Request):
     """主页：展示最新热门游戏"""
-    conn = sqlite3.connect(":memory:")
+    conn = sqlite3.connect(os.getenv("DB_PATH", ":memory:"))
     c = conn.cursor()
     
     # 获取最新数据（按热度排序）
