@@ -3,7 +3,7 @@ from fastapi.templating import Jinja2Templates
 from database import init_db, save_game
 from scraper import scrape_xiaohongshu, scrape_weibo
 from apscheduler.schedulers.background import BackgroundScheduler
-import datetime
+import datetime,os
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
