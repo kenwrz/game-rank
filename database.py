@@ -23,14 +23,13 @@ def init_db():
                 views INTEGER NOT NULL
             )
         """)
-        # 清空旧数据（确保每日更新干净）
-        c.execute("DELETE FROM games")
+        c.execute("DELETE FROM games")  # 清空旧数据确保每日更新干净
         conn.commit()
     finally:
         conn.close()
 
 def save_game(title, platform, views):
-    """保存单条游戏数据"""
+    """保存单条游戏数据（platform 用英文标识）"""
     conn = get_connection()
     try:
         c = conn.cursor()
