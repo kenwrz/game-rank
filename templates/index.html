@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>免费小游戏热门榜 | 每日更新</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .game-card { border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px; }
+        .platform { font-weight: bold; color: #0066cc; }
+        .footer { text-align: center; margin-top: 40px; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>🔥 今日最热门小游戏（免费参考版）</h1>
+    <p>数据来源：小红书/微博公开话题（<strong>无广告、无坑</strong>）</p>
+    
+    {% for game in games %}
+    <div class="game-card">
+        <div class="platform">来自 {{ game.platform == 'xiaohongshu' ? '小红书' : '微博' }}</div>
+        <h3>{{ game.title }}</h3>
+        <p>🔥 热度：{{ game.views }}次</p>
+        <p>💡 提示：建议亲自体验提现规则（避免被坑）</p>
+    </div>
+    {% endfor %}
+    
+    <div class="footer">
+        <p>数据更新时间：{{ today }} | 本工具纯公益，不收取任何费用</p>
+        <p>⚠️ 重要提醒：游戏收益需遵守平台规则，谨防虚假宣传</p>
+    </div>
+</body>
+</html>
