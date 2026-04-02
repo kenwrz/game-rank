@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-DB_PATH = "games.db"
+DB_PATH = ":memory:"
 
 def init_db():
     """初始化数据库（自动创建表）"""
